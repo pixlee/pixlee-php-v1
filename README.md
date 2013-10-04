@@ -1,6 +1,6 @@
 Pixlee PHP API Library
 =================
-This gem is a simple API wrapper for Pixlee's API. It allows you to get your albums, their photos, and the data associated with each. You can also add photos and videos to your albums. 
+This gem is a simple API wrapper for Pixlee's API. It allows you to get your albums, their photos, and the data associated with each. You can also add photos and videos to your albums. Borrows heavily from the Pixlee Ruby gem.
 
 
 Installation
