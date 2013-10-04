@@ -13,7 +13,7 @@
       }
    },
    "description":"API client library for the Pixlee content marketing platform",
-   "homepage":"https://github.com/Pixlee/pixlee-api-php",
+   "homepage":"https://github.com/Pixlee/pixlee-php",
    "keywords":[
       "pixlee",
       "api"
