@@ -1,0 +1,28 @@
+{
+   "authors":[
+      {
+         "email":"api@pixlee.com",
+         "homepage":"https://www.pixlee.com",
+         "name":"Pixlee Devs",
+         "role":"Developer"
+      }
+   ],
+   "autoload":{
+      "psr-0":{
+         "Pixlee":"src/"
+      }
+   },
+   "description":"API client library for the Pixlee content marketing platform",
+   "homepage":"https://bitbucket.org/mailchimp/mailchimp-api-php",
+   "keywords":[
+      "pixlee",
+      "api"
+   ],
+   "license":"MIT",
+   "name":"pixlee/pixlee",
+   "require":{
+      "php":">=5.2.0"
+   },
+   "type":"library",
+   "version":"1.0"
+}
