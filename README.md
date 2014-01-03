@@ -9,7 +9,7 @@ This can be installed via Composer. Or you can include Pixlee.php in your source
 
 Usage
 ==================
-$pixlee = Pixlee.new(pixlee_api_key, pixlee_secret_key, pixlee_user_id)
+$pixlee = new Pixlee(pixlee_api_key, pixlee_secret_key, pixlee_user_id)
 
 **Getting  your albums**
 
