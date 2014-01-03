@@ -17,7 +17,10 @@ $albums = $pixlee->getAlbums();
 
 **Getting all photos in an album**
 
-$photos = $pixlee->getPhotos(album_id, array('sort' => 'recent', 'page' => 2, 'per_page' => 3));
+$photos = $pixlee->getPhotos(album_id, array( 'sort'      => 'recent', 
+                                              'page'      => 2, 
+                                              'per_page'  => 3
+                                              ));
 
 **Get individual photo**
 
@@ -25,4 +28,7 @@ $photo 	=	$pixlee->getPhoto(album_id, album_photo_id);
 
 **Adding a new photo to an album**
 
-$photo = $pixlee->createPhoto(album_id, array('photo_url' => 'url_to_photo', 'email_address' => 'email_of_photo_owner', 'type' => 'photo|video'));
+$photo = $pixlee->createPhoto(album_id, array('photo_url'     => 'url_to_photo', 
+                                              'email_address' => 'email_of_photo_owner', 
+                                              'type'          => 'photo|video'
+                                              ));
