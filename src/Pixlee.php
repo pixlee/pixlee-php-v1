@@ -74,9 +74,16 @@ class Pixlee{
 	}
 
 	private function signedData($data){
+
+		//Fix for php versions that don't support JSON_UNESCAPED_SLASHES (< php 5.4)
+		if(defined("JSON_UNESCAPED_SLASHES"))
+			$jsonData = json_encode($data, JSON_UNESCAPED_SLASHES);
+		else
+			$jsonData = str_replace('\\/', '/', json_encode($data));
+
 		$payload 				= array('data' 			=> $data, 
 														'api_key' 	=> $this->apiKey,
-														'signature' => hash_hmac('sha256', json_encode($data, JSON_UNESCAPED_SLASHES),  $this->secretKey));
+														'signature' => hash_hmac('sha256', $jsonData,  $this->secretKey));
 		$payload 				= json_encode($payload);
 		return $payload;
 	}
@@ -93,7 +100,7 @@ class Pixlee{
 		}elseif ( is_null( $theResult->status ) ){
 			throw new Exception('Pixlee did not return a status');
 		}elseif( !$this->isBetween( $theResult->status, 200, 299 ) ){
-			$errorMessage 	=	implode(',', $theResult->message);
+			$errorMessage 	=	implode(',', (array)$theResult->message);
 			throw new Exception("$theResult->status - $errorMessage ");
 		}else{
 			return $theResult;
