@@ -76,10 +76,11 @@ class Pixlee{
 	private function signedData($data){
 
 		//Fix for php versions that don't support JSON_UNESCAPED_SLASHES (< php 5.4)
-		if(defined("JSON_UNESCAPED_SLASHES"))
+		if(defined("JSON_UNESCAPED_SLASHES")){
 			$jsonData = json_encode($data, JSON_UNESCAPED_SLASHES);
-		else
+		}else{
 			$jsonData = str_replace('\\/', '/', json_encode($data));
+		}	
 
 		$payload 				= array('data' 			=> $data, 
 														'api_key' 	=> $this->apiKey,
