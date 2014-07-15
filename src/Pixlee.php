@@ -36,7 +36,7 @@ class Pixlee{
 	public function createProduct($product_name, $sku, $product_url){		
 		// assign media to the data key
 		$album 					= array('album_name' => $product_name);
-		$product 				= array('name' => $product_name, 'sku' => $sku, 'buy_now_link' => $product_url);	
+		$product 				= array('name' => $product_name, 'sku' => $sku, 'buy_now_link_url' => $product_url);	
 		$data 					= array('album' => $album, 'product' => $product);
 		$payload 				=	$this->signedData($data);
 		return $this->postToAPI( "/albums", $payload );
